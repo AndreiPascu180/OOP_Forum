@@ -6,24 +6,48 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    ui->stackedWidget->insertWidget(4,OthersTopicPage);
+    ui->stackedWidget->setCurrentIndex(0);
+    connect(OthersTopicPage,SIGNAL(LogOut()),this,SLOT(LogOut()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    //delete client;
+    delete client;
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::LogOut()
 {
-    client->getSocket()->write(ui->lineEdit_2->text().toUtf8());
+    ui->stackedWidget->setCurrentIndex(0);
+}
 
+void MainWindow::on_LogInPage_LogIn_Button_clicked()
+{
+    client->getSocket()->write(ui->LineEdit_Username->text().toUtf8());
 }
 
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_LogInPage_Cancel_Button_clicked()
 {
-    this->close();
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_Home_LogIn_Button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_Home_Guest_Button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_OtherTopics_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
 }
 

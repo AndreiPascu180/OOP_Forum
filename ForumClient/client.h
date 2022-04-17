@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <QString>
 #include <QObject>
 #include <QTcpSocket>
 

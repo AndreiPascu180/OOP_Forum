@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QObject>
 #include "client.h"
+#include "others.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,14 +18,24 @@ public:
     MainWindow(QWidget *parent = nullptr);
 
     Client *client = new Client("127.0.0.1",1234);
+    Others *OthersTopicPage = new Others(this);
+
 
     ~MainWindow();
 
 private slots:
 
-    void on_pushButton_2_clicked();
+    void LogOut();
 
-    void on_pushButton_clicked();
+    void on_LogInPage_LogIn_Button_clicked();
+
+    void on_LogInPage_Cancel_Button_clicked();
+
+    void on_Home_LogIn_Button_clicked();
+
+    void on_Home_Guest_Button_clicked();
+
+    void on_OtherTopics_clicked();
 
 private:
     Ui::MainWindow *ui;
