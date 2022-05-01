@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QDebug>
+#include "DataBase.h"
 
 class Thread : public QThread
 {
@@ -18,6 +19,7 @@ public:
 private:
     QTcpSocket *socket;
     qintptr socketDescriptor;
+    DataBase db;
 
 signals:
     //void Error(QTcpSocket::SocketError socketError);
