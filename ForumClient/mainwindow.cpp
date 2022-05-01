@@ -24,7 +24,9 @@ void MainWindow::LogOut()
 
 void MainWindow::on_LogInPage_LogIn_Button_clicked()
 {
-    client->getSocket()->write(ui->LineEdit_Username->text().toUtf8());
+    QString credentials= "1/"+ui->LineEdit_Username->text().toUtf8()+"/"+ui->LineEdit_Password->text().toUtf8();
+
+    client->getSocket()->write(credentials.toUtf8());
 }
 
 

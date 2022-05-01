@@ -15,6 +15,7 @@ private:
     //std::string password;
     QTcpSocket *socket;
 
+
 public:
     explicit Client(QString ip, int port);
     QTcpSocket* getSocket();
