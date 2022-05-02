@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../ForumConsole/server.h"
+#include "E:/QTProject/AplicatiePOO/ForumSERVER/server.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
