@@ -1,10 +1,8 @@
 #include "thread.h"
-#include "DataBase.h"
+//#include "DataBase.h"
+#include "protocol.h"
+#include <QString>
 
-//Thread::Thread(qintptr ID, QObject *parent) : QThread(parent)
-//{
-//    this->socketDescriptor = ID;
-//}
 
 void Thread::run(){
     //thread starts here
@@ -19,55 +17,55 @@ void Thread::run(){
     connect(socket,SIGNAL(disconnected()),this,SLOT(disconnected()),Qt::DirectConnection);
 
     qDebug() << socketDescriptor << " Client connected";
-    db.ConnectDB();
 
+    Protocol::startDatabase();
+    //db.ConnectDB();
     exec();
 }
 
-bool searchUser(QString Username, QString Password)
-{
-    QSqlQuery query;
-
-    query.prepare("select* from Credentials where Username='"+Username+"'and Password='"+Password+"'");
-
-    query.exec();
-
-    while(query.next())
-    {
-        return true;
-    }
-    return false;
-
-}
 
 void Thread::readyRead(){
     QByteArray Data = socket->readAll();
 
-   // QString DataStr = QString(Data);
-    //qDebug() << socketDescriptor << " Data in: " << DataStr;
+    QStringList dataList= QString(Data).split('|');
 
-    QStringList dataList= QString(Data).split('/');
     if(dataList.value(0)=="1")
-    {
-        db.getDataBase().open();
-        if(searchUser(dataList.value(1),dataList.value(2)))
-        {
-            qDebug()<<"Date de logare corecte";
-        }
-        else
-        {
-            qDebug()<<"User sau Parola gresite";
-        }
+        socket->write(Protocol::LogIn(dataList.value(1),dataList.value(2)));
 
-    }
+    if(dataList.value(0)=="2")
+        socket->write(Protocol::Register(dataList.value(1),dataList.value(2),dataList.value(3)));
 
-    //socket->write(Data);
+    if(dataList.value(0)=="3")
+        socket->write(Protocol::PrintQuestions(dataList.value(1)));
+
+    if(dataList.value(0)=="4")
+        socket->write(Protocol::PrintAnswers(dataList.value(1)));
+
+    if(dataList.value(0)=="5")
+        socket->write(Protocol::SubmitQuestion(dataList.value(1),dataList.value(2),dataList.value(3)));
+
+    if(dataList.value(0)=="6")
+        socket->write(Protocol::SubmitAnswer(dataList.value(1),dataList.value(2),dataList.value(3)));
+
+    if(dataList.value(0)=="7")
+        socket->write(Protocol::EditQuestion(dataList.value(1),dataList.value(2)));
+
+    if(dataList.value(0)=="8")
+        socket->write(Protocol::EditAnswer(dataList.value(1),dataList.value(2)));
+
+    if(dataList.value(0)=="9")
+        socket->write(Protocol::DeleteQuestion(dataList.value(1)));
+
+    if(dataList.value(0)=="10")
+        socket->write(Protocol::DeleteAnswer(dataList.value(1)));
+
+
 }
 
 void Thread::disconnected(){
 
     qDebug() << socketDescriptor << " Disconnected";
     socket->deleteLater();
-
+   // Protocol::stopDatabase();
     exit(0);
 }

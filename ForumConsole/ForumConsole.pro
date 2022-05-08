@@ -13,6 +13,7 @@ CONFIG -= app_bundle
 SOURCES += \
         database.cpp \
         main.cpp \
+        protocol.cpp \
         server.cpp \
         thread.cpp
 
@@ -23,5 +24,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     database.h \
+    protocol.h \
     server.h \
     thread.h
