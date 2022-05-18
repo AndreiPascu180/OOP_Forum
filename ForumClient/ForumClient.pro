@@ -13,16 +13,19 @@ SOURCES += \
     client.cpp \
     main.cpp \
     mainwindow.cpp \
-    others.cpp
+    others.cpp \
+    popupwindow.cpp
 
 HEADERS += \
     client.h \
     mainwindow.h \
-    others.h
+    others.h \
+    popupwindow.h
 
 FORMS += \
     mainwindow.ui \
-    others.ui
+    others.ui \
+    popupwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

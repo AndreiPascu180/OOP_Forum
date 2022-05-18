@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     //set the app style sheet
-    QFile file("C:/Users/andre/Desktop/Teorie/Anul 2 - Materiale/Qt Projects/ForumClient/Devsion.qss");
+    QFile file("../ForumClient/Devsion.qss");
     file.open(QFile::ReadOnly);
     QString styleSheet = QLatin1String(file.readAll());
 
@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.setWindowTitle("Forum POO");
 
-    w.show();
+    w.setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint); //
+    w.showMaximized();
     return a.exec();
 }

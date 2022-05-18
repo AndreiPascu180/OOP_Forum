@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QObject>
-#include "client.h"
+#include <QMessageBox>
 #include "others.h"
 
 QT_BEGIN_NAMESPACE
@@ -18,14 +18,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
 
     Client *client = new Client("127.0.0.1",1234);
-    Others *OthersTopicPage = new Others(this);
-
+    Others *OthersTopicPage = new Others(this,client);
+    //PopupWindow* popw = new PopupWindow();
 
     ~MainWindow();
 
 private slots:
 
     void LogOut();
+
+    void HomePage();
 
     void on_LogInPage_LogIn_Button_clicked();
 
@@ -36,6 +38,14 @@ private slots:
     void on_Home_Guest_Button_clicked();
 
     void on_OtherTopics_clicked();
+
+    void on_LogOutButtonFromTopics_clicked();
+
+    void on_Home_SignUp_Button_clicked();
+
+    void on_SignUpCancelButton_clicked();
+
+    void on_SignUpButton_clicked();
 
 private:
     Ui::MainWindow *ui;

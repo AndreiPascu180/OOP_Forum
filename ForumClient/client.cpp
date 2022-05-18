@@ -13,11 +13,26 @@ QTcpSocket *Client::getSocket()
     return socket;
 }
 
+QStringList Client::getLastMsg()
+{
+    return lastResponseMsg;
+}
+
+void Client::setUsername(QString user)
+{
+    username = user;
+}
+
+QString Client::getUsername()
+{
+    return username;
+}
+
 void Client::onReadyRead()
 {
-    QByteArray data = socket->readAll();
+    QByteArray Data = socket->readAll();
+    qDebug() << "S-a primit raspunsul: "<<Data<<"\n";
 
-    qDebug() << "S-a primit raspunsul: "<<data<<"\n";
+    this->lastResponseMsg = QString(Data).split('|');
 
-    //QString dataStr = QString(data);
 }
