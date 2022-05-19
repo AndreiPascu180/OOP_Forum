@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QDebug>
-//#include "DataBase.h"
+#include "database.h"
 
 class Thread : public QThread
 {
@@ -17,14 +17,11 @@ public:
     void run();
 
 private:
+    DataBase db;
     QTcpSocket *socket;
     qintptr socketDescriptor;
-   // DataBase db;
-    //void LogIn(QString UserName,QString Password);
-    //void Register(QString UserName,QString Password, QString Email);
 
 signals:
-    //void Error(QTcpSocket::SocketError socketError);
 
 public slots:
     void readyRead();

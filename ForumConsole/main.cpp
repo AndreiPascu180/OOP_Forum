@@ -7,6 +7,13 @@ int main(int argc, char *argv[])
     Server server;
     server.StartServer();
 
+//    QTextStream out(stdout);
 
+//     QDate cd = QDate::currentDate();
+//      QTime ct = QTime::currentTime();
+
+
+//      QString Data= cd.toString(Qt::ISODate) + " "+ct.toString();
+//      qDebug()<<Data;
     return a.exec();
 }
