@@ -5,6 +5,7 @@
 #include <QListWidget>
 #include "client.h"
 #include <QStackedWidget>
+#include <QMessageBox>
 //#include "popupwindow.h"
 namespace Ui {
 class Others;
@@ -65,6 +66,12 @@ private slots:
     void on_EditQuestion_clicked();
 
     void on_DeleteQuestion_clicked();
+
+    void on_Answer_clicked();
+
+    void on_EditAnswer_clicked();
+
+    void on_DeleteAnswer_clicked();
 
 private:
 

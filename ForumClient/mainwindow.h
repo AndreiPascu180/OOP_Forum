@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QObject>
-#include <QMessageBox>
 #include "others.h"
 
 QT_BEGIN_NAMESPACE
@@ -17,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
 
-    Client *client = new Client("127.0.0.1",1234);
+    Client *client = new Client("192.168.57.93",1234); //127.0.0.1
     Others *OthersTopicPage = new Others(this,client);
     //PopupWindow* popw = new PopupWindow();
 

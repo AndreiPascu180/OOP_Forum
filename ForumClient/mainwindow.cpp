@@ -45,7 +45,7 @@ void MainWindow::on_LogInPage_LogIn_Button_clicked()
     client->getSocket()->waitForReadyRead();
     QString tmp_username = ui->LineEdit_Username->text();
 
-    int lastRespCode = client->getLastMsg().value(0).toInt();
+    int lastRespCode = client->getLastMsg().value(1).toInt();
     qDebug() <<"\nS-a primit raspunsul la logare: " <<lastRespCode<<"\n";
     if (lastRespCode == 1){
 
@@ -88,7 +88,7 @@ void MainWindow::on_OtherTopics_clicked()
 {
     OthersTopicPage->getListWidget()->clear();
 
-    QString message= "3|Other Topics";
+    QString message= "3|"+ui->OtherTopics->text();
     client->getSocket()->write(message.toUtf8());
     client->getSocket()->waitForBytesWritten();
     client->getSocket()->waitForReadyRead();
@@ -128,7 +128,7 @@ void MainWindow::on_SignUpButton_clicked()
     client->getSocket()->waitForReadyRead();
 
 
-    int lastRespCode = client->getLastMsg().value(0).toInt();
+    int lastRespCode = client->getLastMsg().value(1).toInt();
     qDebug() <<"\nS-a primit raspunsul la logare: " <<lastRespCode<<"\n";
     if (lastRespCode == 1){
 

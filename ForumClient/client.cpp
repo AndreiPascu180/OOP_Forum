@@ -4,7 +4,7 @@ Client::Client(QString ip, int port)
 {
     socket = new QTcpSocket(this);
     socket->connectToHost(ip,port);
-    socket->waitForConnected(1000);
+    socket->waitForConnected();
     connect(socket,SIGNAL(readyRead()),this,SLOT(onReadyRead()));
 }
 

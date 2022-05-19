@@ -402,23 +402,6 @@ color: rgb(255, 255, 255)</string>
     </widget>
    </widget>
    <widget class="QWidget" name="P3_AnswersList">
-    <widget class="QListWidget" name="Answers_list">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>172</y>
-       <width>1371</width>
-       <height>571</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
-color: rgb(255, 255, 255)</string>
-     </property>
-     <property name="lineWidth">
-      <number>1</number>
-     </property>
-    </widget>
     <widget class="QWidget" name="layoutWidget_3">
      <property name="geometry">
       <rect>
@@ -700,19 +683,101 @@ color: rgb(255, 255, 255)</string>
       </item>
      </layout>
     </widget>
-    <widget class="QTextBrowser" name="CurrentQuestion">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>70</y>
+       <y>69</y>
        <width>1371</width>
-       <height>81</height>
+       <height>91</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTextBrowser" name="CurrentQuestion">
+        <property name="styleSheet">
+         <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
 color: rgb(255, 255, 255)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe UI Light</family>
+          <pointsize>16</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
+color: rgb(255, 255, 255)</string>
+        </property>
+        <property name="text">
+         <string>  Score</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>180</y>
+       <width>1371</width>
+       <height>551</height>
+      </rect>
      </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QListWidget" name="Answers_list">
+        <property name="styleSheet">
+         <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
+color: rgb(255, 255, 255)</string>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listWidget">
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
