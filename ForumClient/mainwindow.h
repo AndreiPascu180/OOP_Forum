@@ -29,6 +29,8 @@ private slots:
 
     void HomePage();
 
+    void MyProfile();
+
     void on_LogInPage_LogIn_Button_clicked();
 
     void on_LogInPage_Cancel_Button_clicked();
@@ -46,6 +48,8 @@ private slots:
     void on_SignUpCancelButton_clicked();
 
     void on_SignUpButton_clicked();
+
+    void on_MyProfileButtonFromTopics_clicked();
 
 private:
     Ui::MainWindow *ui;

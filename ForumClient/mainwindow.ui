@@ -33,7 +33,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="Page0_WelcomePage">
        <widget class="QLabel" name="label_3">
@@ -411,8 +411,8 @@
        <widget class="QWidget" name="layoutWidget_2">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>20</y>
+          <x>70</x>
+          <y>0</y>
           <width>1381</width>
           <height>61</height>
          </rect>
@@ -435,16 +435,40 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="LogOutButtonFromTopics">
+          <widget class="QPushButton" name="MyProfileButtonFromTopics">
            <property name="minimumSize">
             <size>
-             <width>120</width>
+             <width>80</width>
              <height>40</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>120</width>
+             <width>80</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>8</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>My Profile</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="LogOutButtonFromTopics">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
              <height>40</height>
             </size>
            </property>
@@ -461,6 +485,8 @@
         </layout>
        </widget>
       </widget>
+      <widget class="QWidget" name="Page4_Profile"/>
+      <widget class="QWidget" name="page"/>
      </widget>
     </item>
    </layout>

@@ -1,18 +1,12 @@
 #ifndef CLIENT_H
 #define CLIENT_H
+#include "iclient.h"
 
-#include <iostream>
-#include <string>
-#include <QString>
-#include <QObject>
-#include <QTcpSocket>
 
-class Client : public QObject
+class Client : public IClient
 {
     Q_OBJECT
 private:
-    //std::string username;
-    //std::string password;
     QTcpSocket *socket;
     QStringList lastResponseMsg;
     QString username;

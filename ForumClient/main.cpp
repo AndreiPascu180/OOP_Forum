@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "mainwindowsingleton.h"
 
 #include <QApplication>
 #include <QFile>
@@ -12,10 +12,12 @@ int main(int argc, char *argv[])
     QString styleSheet = QLatin1String(file.readAll());
 
     qApp->setStyleSheet(styleSheet);
-    MainWindow w;
-    w.setWindowTitle("Forum POO");
+//    MainWindow w;
+//    w.setWindowTitle("Forum POO");
 
-    w.setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint); //
-    w.showMaximized();
+//    w.setWindowFlags(Qt::WindowMinimizeButtonHint | Qt::WindowCloseButtonHint); //
+//    w.showMaximized();
+    MainWindowSingleton& w = MainWindowSingleton::getInstance();
+
     return a.exec();
 }

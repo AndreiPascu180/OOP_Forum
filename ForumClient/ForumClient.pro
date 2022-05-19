@@ -11,14 +11,18 @@ CONFIG += c++17
 
 SOURCES += \
     client.cpp \
+    iclient.cpp \
     main.cpp \
     mainwindow.cpp \
+    mainwindowsingleton.cpp \
     others.cpp \
     popupwindow.cpp
 
 HEADERS += \
     client.h \
+    iclient.h \
     mainwindow.h \
+    mainwindowsingleton.h \
     others.h \
     popupwindow.h
 

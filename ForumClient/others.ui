@@ -27,13 +27,16 @@
      <height>754</height>
     </rect>
    </property>
-   <widget class="QWidget" name="page">
-    <widget class="QListWidget" name="listWidget">
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="P1_QuestionsList">
+    <widget class="QListWidget" name="Questions_list">
      <property name="geometry">
       <rect>
-       <x>72</x>
+       <x>80</x>
        <y>72</y>
-       <width>1381</width>
+       <width>1371</width>
        <height>671</height>
       </rect>
      </property>
@@ -48,9 +51,9 @@ color: rgb(255, 255, 255)</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>72</x>
+       <x>80</x>
        <y>0</y>
-       <width>1381</width>
+       <width>1371</width>
        <height>61</height>
       </rect>
      </property>
@@ -62,13 +65,13 @@ color: rgb(255, 255, 255)</string>
        <widget class="QPushButton" name="HomePageButton">
         <property name="minimumSize">
          <size>
-          <width>120</width>
+          <width>125</width>
           <height>40</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>120</width>
+          <width>125</width>
           <height>40</height>
          </size>
         </property>
@@ -78,7 +81,7 @@ color: rgb(255, 255, 255)</string>
          </font>
         </property>
         <property name="text">
-         <string>HomePage</string>
+         <string>Home</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -86,7 +89,19 @@ color: rgb(255, 255, 255)</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="Refresh_Questions">
+        <property name="minimumSize">
+         <size>
+          <width>125</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>125</width>
+          <height>40</height>
+         </size>
+        </property>
         <property name="text">
          <string>Refresh</string>
         </property>
@@ -109,12 +124,69 @@ color: rgb(255, 255, 255)</string>
        <widget class="QPushButton" name="AskQuestionButton">
         <property name="minimumSize">
          <size>
-          <width>180</width>
+          <width>110</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
           <height>40</height>
          </size>
         </property>
         <property name="text">
          <string>Ask a question</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_11">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="EditQuestion">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="DeleteQuestion">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Delete</string>
         </property>
        </widget>
       </item>
@@ -170,16 +242,40 @@ color: rgb(255, 255, 255)</string>
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="LogOutButton">
+       <widget class="QPushButton" name="MyProfileFromQuestions">
         <property name="minimumSize">
          <size>
-          <width>120</width>
+          <width>80</width>
           <height>40</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>120</width>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>My Profile</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="LogOutButton">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
           <height>40</height>
          </size>
         </property>
@@ -196,7 +292,7 @@ color: rgb(255, 255, 255)</string>
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_2">
+   <widget class="QWidget" name="P2_Submit">
     <widget class="QWidget" name="layoutWidget_2">
      <property name="geometry">
       <rect>
@@ -249,7 +345,7 @@ color: rgb(255, 255, 255)</string>
            </size>
           </property>
           <property name="text">
-           <string>Submit question</string>
+           <string>Submit</string>
           </property>
          </widget>
         </item>
@@ -301,7 +397,321 @@ color: rgb(255, 255, 255)</string>
       <string notr="true">color:rgb(255, 255, 255)</string>
      </property>
      <property name="text">
-      <string>Puneti o intrebare comunitatii:</string>
+      <string>Postati ideea dumneavoastra:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="P3_AnswersList">
+    <widget class="QListWidget" name="Answers_list">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>172</y>
+       <width>1371</width>
+       <height>571</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
+color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>0</y>
+       <width>1371</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="BackToQuestions">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="HomePageButton_2">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Refresh_Answers">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Refresh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Answer">
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Answer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="EditAnswer">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="DeleteAnswer">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="UpVoteAnswer">
+        <property name="minimumSize">
+         <size>
+          <width>85</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>85</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>UpVote</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="DownVoteAnswer">
+        <property name="minimumSize">
+         <size>
+          <width>85</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>85</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>180</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>DownVote</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>60</width>
+          <height>35</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="MyProfileFromAnswers">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>My Profile</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="LogOutButton_2">
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>80</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Log Out</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QTextBrowser" name="CurrentQuestion">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>70</y>
+       <width>1371</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
+color: rgb(255, 255, 255)</string>
      </property>
     </widget>
    </widget>

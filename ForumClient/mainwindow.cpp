@@ -26,12 +26,20 @@ void MainWindow::LogOut()
 
 void MainWindow::HomePage()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(3);  //pagina cu lista de topicuri
+}
+
+void MainWindow::MyProfile()
+{
+    ui->stackedWidget->setCurrentIndex(5); //pagina profilului
 }
 
 void MainWindow::on_LogInPage_LogIn_Button_clicked()
 {
-    QString credentials= "1|"+ui->LineEdit_Username->text().toUtf8()+"|"+ui->LineEdit_Password->text().toUtf8();
+    QString tmp_pass = ui->LineEdit_Password->text();
+
+    QString credentials= "1|"+ui->LineEdit_Username->text().toUtf8()+"|"+tmp_pass.toUtf8();
+
     client->getSocket()->write(credentials.toUtf8());
     client->getSocket()->waitForBytesWritten();
     client->getSocket()->waitForReadyRead();
@@ -78,8 +86,6 @@ void MainWindow::on_Home_Guest_Button_clicked()
 
 void MainWindow::on_OtherTopics_clicked()
 {
-    qDebug()<<"Testtest";
-
     OthersTopicPage->getListWidget()->clear();
 
     QString message= "3|Other Topics";
@@ -89,10 +95,11 @@ void MainWindow::on_OtherTopics_clicked()
 
     QStringList dataList = client->getLastMsg();
     for(int i=2;i<dataList.value(1).toInt()*2+1;i+=2){
-        OthersTopicPage->getListWidget()->addItem(dataList.value(i)+": "+dataList.value(i+1));
+        OthersTopicPage->getListWidget()->addItem(dataList.value(i)+" |"+dataList.value(i+1));
     }
 
     ui->stackedWidget->setCurrentIndex(4);
+    OthersTopicPage->getStackedWidget()->setCurrentIndex(0);
 }
 
 
@@ -110,11 +117,16 @@ void MainWindow::on_SignUpCancelButton_clicked()
 
 void MainWindow::on_SignUpButton_clicked()
 {
-    QString credentials= "2|"+ui->lineEdit_SignUp_username->text().toUtf8()+"|"+ui->lineEdit_SignUp_password->text().toUtf8()+"|"+ui->lineEdit_SignUp_email->text().toUtf8();
+    QString tmp_username = ui->lineEdit_SignUp_username->text();
+    QString tmp_pass = ui->lineEdit_SignUp_password->text();
+    if(tmp_pass.contains(' ') || tmp_pass.contains('|')){
+        QMessageBox::warning(this,"SignUp Password Error","Parola nu are voie sa contina spatii sau caracterul \"|\"");
+    }
+    QString credentials= "2|"+tmp_username.toUtf8()+"|"+tmp_pass.toUtf8()+"|"+ui->lineEdit_SignUp_email->text().toUtf8();
     client->getSocket()->write(credentials.toUtf8());
     client->getSocket()->waitForBytesWritten();
     client->getSocket()->waitForReadyRead();
-    QString tmp_username = ui->LineEdit_Username->text();
+
 
     int lastRespCode = client->getLastMsg().value(0).toInt();
     qDebug() <<"\nS-a primit raspunsul la logare: " <<lastRespCode<<"\n";
@@ -129,6 +141,12 @@ void MainWindow::on_SignUpButton_clicked()
             QMessageBox::warning(this,"Register","Username-ul ales deja exista! Va rugam sa alegeti altul!");
         else
             QMessageBox::warning(this,"ERROR","S-a produs o eroare la introducerea datelor!");
+
+}
+
+
+void MainWindow::on_MyProfileButtonFromTopics_clicked()
+{
 
 }
 
