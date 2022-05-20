@@ -6,8 +6,14 @@ class DataBase
 {
 private:
     QSqlDatabase db;
-public:
+    static DataBase *instance;
     DataBase();
+
+
+public:
+    static DataBase &getInstance();
+    static void destroyDatabase();
+
     void ConnectDB();
     QSqlDatabase getDataBase(){return db;}
    // ~DataBase();

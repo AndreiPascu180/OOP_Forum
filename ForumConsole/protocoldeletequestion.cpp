@@ -35,7 +35,6 @@ void ProtocolDeleteQuestion::createMessage()
         Message="9|0";
 }
 
-
 void ProtocolDeleteQuestion::writeOnSocket(QTcpSocket* socket,DataBase db)
 {
     db.getDataBase().open();

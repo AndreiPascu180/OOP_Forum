@@ -1,11 +1,28 @@
 #include "server.h"
 
+Server *Server::instance=nullptr;
+
+Server &Server::getServer()
+{
+    if(!instance)
+        instance=new Server();
+    return *instance;
+}
+
+void Server::destroyServer()
+{
+    if(instance)
+    {
+        delete instance;
+        instance=nullptr;
+    }
+}
+
 Server::Server(QObject *parent)
     : QTcpServer{parent}
 {
-    server = new QTcpServer(this);
-
-    connect(server,SIGNAL(newConnection()),this,SLOT(newConnection()));
+  server = new QTcpServer(this);
+  connect(server,SIGNAL(newConnection()),this,SLOT(newConnection()));
 }
 
 void Server::StartServer()

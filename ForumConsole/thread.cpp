@@ -19,54 +19,56 @@ void Thread::run(){
 
     qDebug() << socketDescriptor << " Client connected";
 
-
-    db.ConnectDB();
+    DataBase::getInstance().ConnectDB();
+   // db.ConnectDB();
     exec();
 }
 
 
 void Thread::readyRead()
 {
+
     QByteArray Data = socket->readAll();
 
     QStringList dataList=QString(Data).split('|');
 
     if (dataList.value(0)=="1")
-        CFactoryProtocol::createProtocol(Data,Login)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,Login)->writeOnSocket(socket,DataBase::getInstance());
 
     if (dataList.value(0)=="2")
-        CFactoryProtocol::createProtocol(Data,Register)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,Register)->writeOnSocket(socket,DataBase::getInstance());
 
     if(dataList.value(0)=="3")
-        CFactoryProtocol::createProtocol(Data,PrintQuestions)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,PrintQuestions)->writeOnSocket(socket,DataBase::getInstance());
 
     if(dataList.value(0)=="4")
-        CFactoryProtocol::createProtocol(Data,PrintAnswers)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,PrintAnswers)->writeOnSocket(socket,DataBase::getInstance());
 
 
     if(dataList.value(0)=="5")
-        CFactoryProtocol::createProtocol(Data,SubmitQuestion)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,SubmitQuestion)->writeOnSocket(socket,DataBase::getInstance());
 
 
     if(dataList.value(0)=="6")
-        CFactoryProtocol::createProtocol(Data,SubmitAnswer)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,SubmitAnswer)->writeOnSocket(socket,DataBase::getInstance());
 
     if(dataList.value(0)=="7")
-        CFactoryProtocol::createProtocol(Data,EditQuestion)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,EditQuestion)->writeOnSocket(socket,DataBase::getInstance());
 
     if(dataList.value(0)=="8")
-        CFactoryProtocol::createProtocol(Data,EditAnswer)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,EditAnswer)->writeOnSocket(socket,DataBase::getInstance());
 
     if(dataList.value(0)=="9")
-        CFactoryProtocol::createProtocol(Data,DeleteQuestion)->writeOnSocket(socket,this->db);
-
-       // socket->write(Protocol::DeleteQuestion(dataList.value(1)));
+        CFactoryProtocol::createProtocol(Data,DeleteQuestion)->writeOnSocket(socket,DataBase::getInstance());
 
     if(dataList.value(0)=="10")
-        CFactoryProtocol::createProtocol(Data,DeleteAnswer)->writeOnSocket(socket,this->db);
+        CFactoryProtocol::createProtocol(Data,DeleteAnswer)->writeOnSocket(socket,DataBase::getInstance());
 
-        //socket->write(Protocol::DeleteAnswer(dataList.value(1)));
+    if(dataList.value(0)=="11")
+        CFactoryProtocol::createProtocol(Data,LikeAnswer)->writeOnSocket(socket,DataBase::getInstance());
 
+    if(dataList.value(0)=="12")
+        CFactoryProtocol::createProtocol(Data,DislikeAnswer)->writeOnSocket(socket,DataBase::getInstance());
 
 }
 

@@ -17,7 +17,7 @@ public:
     void run();
 
 private:
-    DataBase db;
+    //DataBase *db;
     QTcpSocket *socket;
     qintptr socketDescriptor;
 

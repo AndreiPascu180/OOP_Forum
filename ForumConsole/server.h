@@ -7,11 +7,14 @@
 #include <QObject>
 #include "thread.h"
 
+
 class Server : public QTcpServer
 {
     Q_OBJECT
 public:
-    explicit Server(QObject *parent = nullptr);
+
+    static Server &getServer();
+    static void destroyServer();
     void StartServer();
 
 protected:
@@ -22,7 +25,11 @@ public slots:
        void newConnection();
 
 private:
-       QTcpServer *server;
+       static Server *instance;
+        QTcpServer *server;
+        explicit Server(QObject *parent = nullptr);
+        Server(const Server&)=delete;
+        ~Server(){};
 
 
 

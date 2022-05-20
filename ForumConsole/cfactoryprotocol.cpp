@@ -9,6 +9,9 @@
 #include "protocoleditanswer.h"
 #include "protocoldeletequestion.h"
 #include "protocoldeleteanswer.h"
+#include "protocollikeanswer.h"
+#include "protocoldislikeanswer.h"
+
 CFactoryProtocol::CFactoryProtocol()
 {
 
@@ -46,6 +49,12 @@ CFactoryProtocol::CFactoryProtocol()
 
     if(Name==DeleteAnswer)
         return new ProtocolDeleteAnswer(dataList.value(1));
+
+    if(Name==LikeAnswer)
+        return new ProtocolLikeAnswer(dataList.value(1));
+
+    if(Name==DislikeAnswer)
+        return new ProtocolDislikeAnswer(dataList.value(1));
 
 
 

@@ -5,7 +5,6 @@ ProtocolLogin::ProtocolLogin(QString UserName,QString Password)
     this->Username=UserName;
     this->Password=Password;
 
-    //this->socket=socket;
 }
 
 bool searchUser(QString Username, QString Password)
@@ -24,7 +23,6 @@ bool searchUser(QString Username, QString Password)
 
 void ProtocolLogin::createMessage()
 {
-   // this->Password.resize(Password.size()-2);
 
     if(searchUser(this->Username,this->Password))
     {

@@ -5,10 +5,29 @@
 #include <QSqlError>
 #include <QSqlQuery>
 
+DataBase *DataBase::instance=nullptr;
+
+DataBase &DataBase::getInstance()
+{
+    if(!instance)
+        instance=new DataBase();
+    return *instance;
+}
+
+void DataBase::destroyDatabase()
+{
+    if(instance)
+    {
+        delete instance;
+        instance=nullptr;
+    }
+}
+
 DataBase::DataBase()
 {
 
 }
+
 void DataBase::ConnectDB()
 {
       QString servername="localhost";

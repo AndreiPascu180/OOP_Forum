@@ -16,11 +16,12 @@ SOURCES += \
         database.cpp \
         iprotocol.cpp \
         main.cpp \
-        protocol.cpp \
         protocoldeleteanswer.cpp \
         protocoldeletequestion.cpp \
+        protocoldislikeanswer.cpp \
         protocoleditanswer.cpp \
         protocoleditquestion.cpp \
+        protocollikeanswer.cpp \
         protocollogin.cpp \
         protocolprintanswers.cpp \
         protocolprintquestions.cpp \
@@ -41,11 +42,12 @@ HEADERS += \
     cprotocol.h \
     database.h \
     iprotocol.h \
-    protocol.h \
     protocoldeleteanswer.h \
     protocoldeletequestion.h \
+    protocoldislikeanswer.h \
     protocoleditanswer.h \
     protocoleditquestion.h \
+    protocollikeanswer.h \
     protocollogin.h \
     protocolprintanswers.h \
     protocolprintquestions.h \

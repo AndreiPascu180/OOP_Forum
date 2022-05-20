@@ -4,8 +4,8 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    Server server;
-    server.StartServer();
+
+    Server::getServer().StartServer();
 
 //    QTextStream out(stdout);
 
