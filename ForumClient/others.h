@@ -73,6 +73,12 @@ private slots:
 
     void on_DeleteAnswer_clicked();
 
+    void on_UpVoteAnswer_clicked();
+
+    void on_DownVoteAnswer_clicked();
+
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
 
 

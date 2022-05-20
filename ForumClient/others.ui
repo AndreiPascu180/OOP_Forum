@@ -683,7 +683,7 @@ color: rgb(255, 255, 255)</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -704,46 +704,15 @@ color: rgb(255, 255, 255)</string>
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="minimumSize">
-         <size>
-          <width>70</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>70</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Segoe UI Light</family>
-          <pointsize>16</pointsize>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 300 16pt &quot;Segoe UI Light&quot;;
-color: rgb(255, 255, 255)</string>
-        </property>
-        <property name="text">
-         <string>  Score</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>80</x>
        <y>180</y>
        <width>1371</width>
-       <height>551</height>
+       <height>491</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -761,20 +730,69 @@ color: rgb(255, 255, 255)</string>
         </property>
        </widget>
       </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>1040</x>
+       <y>679</y>
+       <width>411</width>
+       <height>82</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
       <item>
-       <widget class="QListWidget" name="listWidget">
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgb(255, 255, 255)</string>
+        </property>
+        <property name="text">
+         <string>Sortati dupa:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
         <property name="minimumSize">
          <size>
-          <width>70</width>
-          <height>0</height>
+          <width>260</width>
+          <height>50</height>
          </size>
         </property>
-        <property name="maximumSize">
-         <size>
-          <width>70</width>
-          <height>16777215</height>
-         </size>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgb(255, 255, 255)</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Ordinea adaugarii cresc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ordinea adaugarii desc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Scor desc</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Scor cresc</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

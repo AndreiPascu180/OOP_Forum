@@ -10,6 +10,7 @@ private:
     QTcpSocket *socket;
     QStringList lastResponseMsg;
     QString username;
+    QString topic_accesat;
 
 public:
     explicit Client(QString ip, int port);
@@ -17,6 +18,8 @@ public:
     QStringList getLastMsg();
     void setUsername(QString user);
     QString getUsername();
+    void setTopic(QString topic);
+    QString getTopic();
 
 signals:
 

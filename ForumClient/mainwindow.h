@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
 
-    Client *client = new Client("192.168.57.93",1234); //127.0.0.1
+    Client *client = new Client("192.168.57.93",1234); //127.0.0.1 // 192.168.57.93
     Others *OthersTopicPage = new Others(this,client);
     //PopupWindow* popw = new PopupWindow();
 
@@ -49,6 +49,22 @@ private slots:
     void on_SignUpButton_clicked();
 
     void on_MyProfileButtonFromTopics_clicked();
+
+    void on_CppTopic_clicked();
+
+    void on_JavaTopic_clicked();
+
+    void on_PythonTopic_clicked();
+
+    void on_HomeFromProfile_clicked();
+
+    void on_LogOutButtonFromProfile_clicked();
+
+    void on_EditDescription_clicked();
+
+    void on_EditProfile_Submit_clicked();
+
+    void on_EditProfile_Cancel_clicked();
 
 private:
     Ui::MainWindow *ui;

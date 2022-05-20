@@ -28,6 +28,16 @@ QString Client::getUsername()
     return username;
 }
 
+void Client::setTopic(QString topic)
+{
+    topic_accesat = topic;
+}
+
+QString Client::getTopic()
+{
+    return topic_accesat;
+}
+
 void Client::onReadyRead()
 {
     QByteArray Data = socket->readAll();
