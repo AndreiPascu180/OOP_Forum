@@ -30,7 +30,7 @@ CFactoryProtocol::CFactoryProtocol()
         return new ProtocolPrintQuestions(dataList.value(1));
 
     if(Name==PrintAnswers)
-        return new ProtocolPrintAnswers(dataList.value(1));
+        return new ProtocolPrintAnswers(dataList.value(1),dataList.value(2));
 
     if(Name==SubmitQuestion)
         return new ProtocolSubmitQuestion(dataList.value(1),dataList.value(2),dataList.value(3));
@@ -51,10 +51,10 @@ CFactoryProtocol::CFactoryProtocol()
         return new ProtocolDeleteAnswer(dataList.value(1));
 
     if(Name==LikeAnswer)
-        return new ProtocolLikeAnswer(dataList.value(1));
+        return new ProtocolLikeAnswer(dataList.value(1),dataList.value(2));
 
     if(Name==DislikeAnswer)
-        return new ProtocolDislikeAnswer(dataList.value(1));
+        return new ProtocolDislikeAnswer(dataList.value(1),dataList.value(2));
 
 
 

@@ -15,7 +15,7 @@ void ProtocolDeleteAnswer::createMessage()
 
     if(searchAnswerOrQuestion("Answers",Answer)==true)
     {
-        query.prepare("declare @IdA int;select @IdA=IdAnswer from Answers where Text='"+Answer+"'; delete from Answers where IdAnswer=@IdA;");
+        query.prepare("declare @IdA int;select @IdA=IdAnswer from Answers where Text='"+Answer+"'; delete from AnswersReputation where IdAnswer=@IdA;delete from Answers where IdAnswer=@IdA;");
         query.exec();
         Message="10|1";
     }
