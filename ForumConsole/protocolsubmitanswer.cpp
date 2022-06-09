@@ -13,7 +13,7 @@ void  ProtocolSubmitAnswer::createMessage()
     QSqlQuery query;
     //Answer.resize(Answer.size()-2);
 
-    query.prepare("declare @Id1 as int;declare @Id2 as int;select @Id1=C.IdUser from Credentials C where Username='"+Username+"'; select @Id2=Q.IdQuestion from Questions Q where Q.Text='"+Question+"';insert into FORUM.dbo.Answers (IdUser,IdQuestion,Text,Upvotes,Downvotes) values (@Id1,@Id2,:Answer,0,0)") ;
+    query.prepare("declare @Id1 as int;declare @Id2 as int;select @Id1=C.IdUser from Credentials C where Username='"+Username+"'; select @Id2=Q.IdQuestion from Questions Q where Q.Text='"+Question+"';insert into FORUM.dbo.Answers (IdUser,IdQuestion,Text,Reputation) values (@Id1,@Id2,:Answer,0)") ;
     query.bindValue(":Answer",Answer);
 
     if(query.exec())

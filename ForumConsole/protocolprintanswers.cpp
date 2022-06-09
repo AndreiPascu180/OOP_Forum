@@ -19,7 +19,7 @@ void ProtocolPrintAnswers::createMessage()
         query.prepare("select C.Username,A.Text, A.Reputation from Answers A join Questions Q on Q.IdQuestion=A.IdQuestion join Credentials C on C.IdUser=A.IdUser where Q.Text='"+Question+"'");
 
     if(order=="1")
-        query.prepare("select C.Username,A.Text, A.Reputation from Answers A join Questions Q on Q.IdQuestion=A.IdQuestion join Credentials C on C.IdUser=A.IdUser where Q.Text='"+Question+"' order by Q.IdQuestion DESC");
+        query.prepare("select C.Username,A.Text, A.Reputation from Answers A join Questions Q on Q.IdQuestion=A.IdQuestion join Credentials C on C.IdUser=A.IdUser where Q.Text='"+Question+"' order by A.IdAnswer DESC");
 
     if(order=="2")
         query.prepare("select C.Username,A.Text, A.Reputation from Answers A join Questions Q on Q.IdQuestion=A.IdQuestion join Credentials C on C.IdUser=A.IdUser where Q.Text='"+Question+"' order by Reputation DESC");

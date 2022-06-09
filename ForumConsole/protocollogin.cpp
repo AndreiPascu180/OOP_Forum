@@ -1,4 +1,5 @@
 #include "protocollogin.h"
+#include "iexception.h"
 
 ProtocolLogin::ProtocolLogin(QString UserName,QString Password)
 {

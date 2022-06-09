@@ -14,7 +14,7 @@ void  ProtocolSubmitQuestion::createMessage()
 
    // Question.resize(Question.size()-2);
 
-    query.prepare("declare @Id1 as int;declare @Id2 as int;select @Id1=C.IdUser from Credentials C where Username='"+Username+"'; select @Id2=T.IdTopic from Topics T where T.Name='"+TopicName+"';insert into FORUM.dbo.Questions (IdUser,IdTopic,Text,Upvotes,Downvotes) values (@Id1,@Id2,:Question,0,0)") ;
+    query.prepare("declare @Id1 as int;declare @Id2 as int;select @Id1=C.IdUser from Credentials C where Username='"+Username+"'; select @Id2=T.IdTopic from Topics T where T.Name='"+TopicName+"';insert into FORUM.dbo.Questions (IdUser,IdTopic,Text) values (@Id1,@Id2,:Question)") ;
     query.bindValue(":Question",Question);
 
     if(query.exec())

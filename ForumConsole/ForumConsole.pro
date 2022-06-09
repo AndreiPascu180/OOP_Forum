@@ -11,9 +11,10 @@ CONFIG -= app_bundle
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        cexception.cpp \
         cfactoryprotocol.cpp \
-        cprotocol.cpp \
         database.cpp \
+        iexception.cpp \
         iprotocol.cpp \
         main.cpp \
         protocoldeleteanswer.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
         protocollogin.cpp \
         protocolprintanswers.cpp \
         protocolprintquestions.cpp \
+        protocolprofiluser.cpp \
         protocolregister.cpp \
         protocolsubmitanswer.cpp \
         protocolsubmitquestion.cpp \
@@ -38,9 +40,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     ProtocolList.h \
+    cexception.h \
     cfactoryprotocol.h \
-    cprotocol.h \
     database.h \
+    iexception.h \
     iprotocol.h \
     protocoldeleteanswer.h \
     protocoldeletequestion.h \
@@ -51,6 +54,7 @@ HEADERS += \
     protocollogin.h \
     protocolprintanswers.h \
     protocolprintquestions.h \
+    protocolprofiluser.h \
     protocolregister.h \
     protocolsubmitanswer.h \
     protocolsubmitquestion.h \
